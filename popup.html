@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+
+  <script type="text/javascript" src="popup.js"></script>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div ng-app="app">
+  <div ng-controller="ctrl">
+    <div class="presentation">
+
+      <i class="fa fa-coffee"></i> Order me a
+        <div class="nl-field" ng-class="{'nl-field-open': nlFieldOpen}">
+          <a class="nl-field-toggle" ng-click="nlFieldOpenToggle()">{{ currentItem }}</a>
+          <ul>
+            <li ng-repeat="(key, value) in listItems" ng-click="nlFieldOpenToggle(key)" ng-class="{ checked: currentItem == value }">{{ value }}</li>
+          </ul>
+        </div>
+        <div class="nl-overlay"></div>
+
+      Coffee
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
